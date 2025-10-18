@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
+import Introduction from './components/Introduction';
 
 function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark'); // ✅ Toujours commencer en dark
@@ -28,8 +29,8 @@ function App() {
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       <Header theme={theme} toggleTheme={toggleTheme} />
 
-      <main className="pt-16">
-        {/* Body content will go here */}
+      <main>
+        <Introduction />
       </main>
     </div>
   );
