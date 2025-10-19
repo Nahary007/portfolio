@@ -42,9 +42,10 @@ const Introduction = () => {
           </span>
         </h2>
 
-        <p className="mt-6 text-gray-700 dark:text-gray-300 leading-relaxed text-base md:text-lg">
-            J’aime concevoir des architectures backend robustes, sécurisées et évolutives pour répondre aux besoins réels des utilisateurs.
+        <p className="mt-4 text-gray-700 dark:text-gray-300 leading-relaxed text-base md:text-lg">
+          Passionné par les technologies, je suis fier d’exercer ce métier de développeur qui me pousse à apprendre, à me dépasser, et à résoudre des problèmes concrets avec des solutions élégantes et efficaces ; c’est cette quête constante d’amélioration, ce plaisir de transformer des idées en applications utiles et performantes.
         </p>
+
 
         <motion.a
           href="/cv.pdf"
