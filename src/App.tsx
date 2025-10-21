@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Introduction from './components/Introduction';
 import Realisations from './components/Realisation';
 import Cv from './components/Cv';
+import Competences from './components/Competence';
 
 function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark'); // ✅ Toujours commencer en dark
@@ -35,6 +36,7 @@ function App() {
         <Introduction />
         <Realisations />
         <Cv />
+        <Competences />
       </main>
     </div>
   );

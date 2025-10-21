@@ -69,9 +69,6 @@ const Cv = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-slate-800 via-blue-600 to-purple-600 bg-clip-text text-transparent">
             Mon Parcours Professionnel
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-            Un itinéraire mêlant expériences concrètes et apprentissages académiques pour bâtir des compétences solides.
-          </p>
         </motion.div>
 
         <div className="relative">
