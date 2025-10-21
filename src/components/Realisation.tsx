@@ -1,34 +1,27 @@
 import { motion } from "framer-motion";
-import { CalendarDays, Code2, Users, ExternalLink } from "lucide-react";
+import { Code2,  ExternalLink } from "lucide-react";
 
 const projets = [
   {
-    titre: "Hackathon Interne",
-    date: "07–09 juillet 2025",
-    role: "Capitaine & Développeur Backend",
-    organisation: "MadaMiray",
+    titre: "SideUp",
     description: [
-      "Participation à un hackathon interne à l’ESTI sur le projet MadaMiray, une plateforme web pour le tourisme à Madagascar.",
-      "L’application permet de lister des sites touristiques, réserver des guides et agences, et envoyer des e-mails de confirmation.",
-      "Carte interactive des destinations avec un chatbot d’exploration de Madagascar.",
-      "Projet réalisé avec React, TailwindCSS, Laravel, PostgreSQL, OpenStreetMap API et Claude API.",
-      "Mise en place du système de réservation et d’envoi d’e-mails pour chaque agence et guide local.",
+      "Création d'une plateforme de réservation de services de bien-être (SPA, massage, développement personnel) et réalisation autonome du projet complet, avec une interface utilisateur moderne et responsive.",
+      "Mise en place d’un système d’envoi d’emails avec Laravel, gestion des statuts des réservations depuis l’espace administrateur, et ajout de notifications dans l’interface React.",
+      "Utilisation de React pour le frontend, Tailwind CSS pour le style, Laravel pour le backend, et PostgreSQL pour la base de données.",
+      "Apprentissage de l’interconnexion entre un framework JavaScript et un framework PHP, ainsi que la gestion des relations entre les entités.",
     ],
-    lien: "https://github.com/madamiray", // Ajout optionnel pour un lien
+    lien: "https://github.com/Nahary007/sideUp-l",
     couleur: "from-emerald-500 to-teal-600",
   },
   {
-    titre: "Webcup 2025",
-    date: "17–18 mai 2025",
-    role: "Capitaine & Développeur Backend",
-    organisation: "TheEndPage",
+    titre: "MiamPlanner",
     description: [
-      "Participation à la Webcup 2025 sur la plateforme EndPage, permettant de créer des pages personnalisées.",
-      "Gestion complète des profils utilisateurs (création, modification, suppression, authentification).",
-      "Réalisation du backend : création, modification, suppression et affichage des pages personnalisables.",
-      "Stack : React, TailwindCSS, Express & MySQL, avec JWT pour l’authentification et TypeORM pour la gestion de la base de données.",
+      "Mise en place d'une plateforme pour mieux organiser les repas afin de diminuer le gaspillage de nourriture.",
+      "Création d'un projet qui offre aux utilisateurs la possibilité de planifier le repas pour chaque semaine, pour une gestion des stocks, des recettes.",
+      " Utilisation de React pour le frontend, Tailwind CSS pour le style, Symfony pour le backend, et PostgreSQL pour la base de données.",
+      "Gestion des entités (utilisateurs, recettes, ingrédients) et interconnexion entre React et Symfony.",
     ],
-    lien: "https://github.com/theendpage", // Ajout optionnel pour un lien
+    lien: "https://github.com/Nahary007/MiamPlanner",
     couleur: "from-purple-500 to-pink-600",
   },
 ];
@@ -66,26 +59,13 @@ const Realisations = () => {
               className="group relative bg-gradient-to-br from-white/80 to-gray-50/80 dark:from-gray-900/80 dark:to-gray-800/80 rounded-3xl shadow-xl p-8 border border-white/20 dark:border-gray-700/50 backdrop-blur-md overflow-hidden hover:shadow-2xl hover:shadow-emerald-500/20 dark:hover:shadow-purple-500/20 transition-all duration-500"
             >
 
-            {/* En-tête du projet */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 relative z-10">
-
-            {/* Conteneur organisation et date */}
-            <div className="flex justify-between w-full text-gray-600 dark:text-gray-400 text-sm">
-                <span className="font-semibold">{projet.organisation}</span>
-
-                <div className="flex items-center">
-                <CalendarDays className="w-4 h-4 mr-2 flex-shrink-0" />
-                <span>{projet.date}</span>
-                </div>
-            </div>
-            </div>
 
 
 
               {/* Rôle */}
               <div className="flex items-center space-x-3 text-gray-700 dark:text-gray-300 mb-6 relative z-10">
-                <Users className="w-5 h-5 text-blue-500 flex-shrink-0" />
-                <p className="font-semibold">{projet.role}</p>
+               
+                <p className="font-semibold">{projet.titre}</p>
               </div>
 
               {/* Description */}
