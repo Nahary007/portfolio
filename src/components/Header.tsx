@@ -10,7 +10,7 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Services', href: '#services' },
+    { name: 'Profil', href: '#profil' },
     { name: 'Réalisations', href: '#realisations' },
     { name: 'CV', href: '#cv' },
     { name: 'Compétences', href: '#competences' },
@@ -18,10 +18,10 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
 
   return (
     <>
-      <header className="w-full z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+      <header className="w-full z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-800/50 sticky top-0 transition-all duration-300 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="text-xl font-bold text-gray-900 dark:text-white">
+            <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Portfolio
             </div>
 
@@ -30,33 +30,34 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="px-4 py-2 text-gray-700 dark:text-gray-300 border-2 border-transparent hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-all duration-300 hover:scale-110"
+                  className="relative px-4 py-2 text-gray-700 dark:text-gray-300 font-medium border-2 border-transparent hover:border-blue-500/50 dark:hover:border-purple-500/50 hover:text-blue-600 dark:hover:text-purple-400 rounded-xl transition-all duration-300 hover:scale-105 group"
                 >
                   {link.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full group-hover:w-full transition-all duration-300"></span>
                 </a>
               ))}
 
               <button
                 onClick={toggleTheme}
-                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+                className="p-2 rounded-xl hover:bg-gray-100/80 dark:hover:bg-gray-800/80 transition-all duration-200 hover:rotate-180"
                 aria-label="Toggle theme"
               >
                 {theme === 'light' ? (
-                  <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                  <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300 transition-colors" />
                 ) : (
-                  <Sun className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                  <Sun className="w-5 h-5 text-gray-700 dark:text-gray-300 transition-colors" />
                 )}
               </button>
 
-              <button className="relative px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-semibold overflow-hidden group transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50">
+              <button className="relative px-8 py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white rounded-full font-semibold overflow-hidden group transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25 active:scale-95">
                 <span className="relative z-10">Me contacter</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 via-purple-700 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
             </nav>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+              className="md:hidden p-2 rounded-xl hover:bg-gray-100/80 dark:hover:bg-gray-800/80 transition-all duration-200"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
@@ -71,13 +72,13 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
 
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden transition-opacity duration-300"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300"
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
 
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-800 z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 right-0 h-full w-80 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-l border-gray-200/50 dark:border-gray-800/50 z-50 transform transition-all duration-300 ease-in-out md:hidden shadow-2xl ${
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -88,32 +89,35 @@ export default function Header({ theme, toggleTheme }: HeaderProps) {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-2 text-gray-700 dark:text-gray-300 border-2 border-transparent hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-all duration-300 text-lg"
+                className="px-4 py-3 text-gray-700 dark:text-gray-300 border-2 border-transparent hover:border-blue-500/50 dark:hover:border-purple-500/50 hover:text-blue-600 dark:hover:text-purple-400 rounded-xl transition-all duration-300 text-lg font-medium hover:scale-105"
               >
                 {link.name}
               </a>
             ))}
 
             <button
-              onClick={toggleTheme}
-              className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 text-lg"
+              onClick={() => {
+                toggleTheme();
+                setMobileMenuOpen(false);
+              }}
+              className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-purple-400 transition-all duration-200 text-lg font-medium hover:scale-105"
             >
               {theme === 'light' ? (
                 <>
                   <Moon className="w-5 h-5" />
-                  <span>Dark</span>
+                  <span>Mode Dark</span>
                 </>
               ) : (
                 <>
                   <Sun className="w-5 h-5" />
-                  <span>Light</span>
+                  <span>Mode Light</span>
                 </>
               )}
             </button>
 
-            <button className="relative mt-4 px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-semibold overflow-hidden group transition-all duration-300 hover:scale-105">
+            <button className="relative mt-4 px-8 py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white rounded-full font-semibold overflow-hidden group transition-all duration-300 hover:scale-105 hover:shadow-xl">
               <span className="relative z-10">Me contacter</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-700 via-purple-700 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
           </nav>
         </div>
