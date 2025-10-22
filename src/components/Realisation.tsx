@@ -11,7 +11,7 @@ const projets = [
       "Apprentissage de l’interconnexion entre un framework JavaScript et un framework PHP, ainsi que la gestion des relations entre les entités.",
     ],
     lien: "https://github.com/Nahary007/sideUp-l",
-    couleur: "from-emerald-500 to-teal-600",
+    couleur: "from-blue-500 to-blue-700",
   },
   {
     titre: "MiamPlanner",
@@ -22,17 +22,17 @@ const projets = [
       "Gestion des entités (utilisateurs, recettes, ingrédients) et interconnexion entre React et Symfony.",
     ],
     lien: "https://github.com/Nahary007/MiamPlanner",
-    couleur: "from-purple-500 to-pink-600",
+    couleur: "from-blue-500 to-blue-700",
   },
 ];
 
 const Realisations = () => {
   return (
-    <section id="realisations" className="relative py-24 min-h-screen-75 overflow-hidden text-gray-900 dark:text-white transition-colors duration-300 bg-gradient-to-br from-white/50 via-transparent to-gray-50/50 dark:from-gray-900/50 dark:via-transparent dark:to-gray-950/50">
+    <section id="realisations" className="relative py-24 min-h-screen-75 overflow-hidden text-white transition-colors duration-300 bg-gradient-to-br from-gray-900/50 via-transparent to-gray-950/50">
       {/* Arrière-plan subtil avec formes géométriques */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/5 dark:bg-purple-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-500/5 dark:bg-indigo-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
@@ -42,7 +42,7 @@ const Realisations = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
           viewport={{ once: true }}
-          className="text-5xl md:text-6xl font-black text-center mb-4 bg-gradient-to-r from-gray-900 via-blue-600 to-purple-600 bg-clip-text text-transparent drop-shadow-2xl"
+          className="text-5xl md:text-6xl font-black text-center mb-4 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent drop-shadow-2xl"
         >
           Mes Réalisations
         </motion.h2>
@@ -56,20 +56,20 @@ const Realisations = () => {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.8, delay: index * 0.1, type: "spring", stiffness: 100 }}
               viewport={{ once: true }}
-              className="group relative bg-gradient-to-br from-white/80 to-gray-50/80 dark:from-gray-900/80 dark:to-gray-800/80 rounded-3xl shadow-xl p-8 border border-white/20 dark:border-gray-700/50 backdrop-blur-md overflow-hidden hover:shadow-2xl hover:shadow-emerald-500/20 dark:hover:shadow-purple-500/20 transition-all duration-500"
+              className="group relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-3xl shadow-xl p-8 border border-gray-700/50 backdrop-blur-md overflow-hidden hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500"
             >
 
 
 
 
               {/* Rôle */}
-              <div className="flex items-center space-x-3 text-gray-700 dark:text-gray-300 mb-6 relative z-10">
+              <div className="flex items-center space-x-3 text-gray-300 mb-6 relative z-10">
                
                 <p className="font-semibold">{projet.titre}</p>
               </div>
 
               {/* Description */}
-              <ul className="space-y-3 text-gray-700 dark:text-gray-300 leading-relaxed relative z-10">
+              <ul className="space-y-3 text-gray-300 leading-relaxed relative z-10">
                 {projet.description.map((ligne, i) => (
                   <motion.li 
                     key={i}
@@ -77,9 +77,9 @@ const Realisations = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: i * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex items-start space-x-3 pl-4 border-l-2 border-gray-200/50 dark:border-gray-700/50"
+                    className="flex items-start space-x-3 pl-4 border-l-2 border-gray-700/50"
                   >
-                    <Code2 className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" />
+                    <Code2 className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
                     <span>{ligne}</span>
                   </motion.li>
                 ))}
@@ -93,7 +93,7 @@ const Realisations = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="mt-6 inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-300 relative z-10"
+                  className="mt-6 inline-flex items-center gap-2 text-blue-400 font-semibold hover:text-blue-300 transition-colors duration-300 relative z-10"
                 >
                   Voir le projet <ExternalLink className="w-4 h-4" />
                 </motion.a>
