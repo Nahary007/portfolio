@@ -4,6 +4,7 @@ import Introduction from './components/Introduction';
 import Realisations from './components/Realisation';
 import Cv from './components/Cv';
 import Competences from './components/Competence';
+import Contact from './components/Contact';
 
 function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark'); // ✅ Toujours commencer en dark
@@ -37,6 +38,7 @@ function App() {
         <Realisations />
         <Cv />
         <Competences />
+        <Contact />
       </main>
     </div>
   );
