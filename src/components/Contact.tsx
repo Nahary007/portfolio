@@ -34,7 +34,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative py-24 min-h-screen bg-gradient-to-br from-gray-900/50 via-transparent to-gray-950/50 overflow-hidden text-white transition-colors duration-300"
+      className="relative py-24 min-h-screen bg-gradient-to-br from-gray-50/50 via-transparent to-gray-100/50 dark:from-gray-900/50 dark:via-transparent dark:to-gray-950/50 overflow-hidden text-gray-900 dark:text-white transition-colors duration-300"
     >
       {/* Arrière-plan subtil */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -54,7 +54,7 @@ const Contact = () => {
           Me Contacter
         </motion.h2>
 
-        <p className="text-center text-gray-300 mb-16 text-lg max-w-3xl mx-auto">
+        <p className="text-center text-gray-600 dark:text-gray-300 mb-16 text-lg max-w-3xl mx-auto">
           Prêt à discuter de votre projet ? Envoyez-moi un message ou connectez-vous sur les réseaux sociaux.
         </p>
 
@@ -65,13 +65,13 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
             viewport={{ once: true }}
-            className="bg-gray-800/80 rounded-3xl p-8 shadow-xl border border-gray-700/50 backdrop-blur-md"
+            className="bg-gray-100/80 dark:bg-gray-800/80 rounded-3xl p-8 shadow-xl border border-gray-300/50 dark:border-gray-700/50 backdrop-blur-md"
           >
-            <h3 className="text-2xl font-bold mb-6 text-white">Envoyez un Message</h3>
+            <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Envoyez un Message</h3>
 
             <form ref={form} onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
                   Nom
                 </label>
                 <input
@@ -79,13 +79,13 @@ const Contact = () => {
                   name="from_name"
                   id="name"
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-gray-700/50 bg-gray-800/50 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300/50 dark:border-gray-700/50 bg-gray-100/50 dark:bg-gray-800/50 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                   placeholder="Votre nom"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
                   Email
                 </label>
                 <input
@@ -93,13 +93,13 @@ const Contact = () => {
                   name="from_email"
                   id="email"
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-gray-700/50 bg-gray-800/50 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300/50 dark:border-gray-700/50 bg-gray-100/50 dark:bg-gray-800/50 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                   placeholder="votre@email.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="objet" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="objet" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
                   Objet
                 </label>
                 <input
@@ -107,13 +107,13 @@ const Contact = () => {
                   name="subject"
                   id="objet"
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-gray-700/50 bg-gray-800/50 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300/50 dark:border-gray-700/50 bg-gray-100/50 dark:bg-gray-800/50 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                   placeholder="Objet du message"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
                   Message
                 </label>
                 <textarea
@@ -121,7 +121,7 @@ const Contact = () => {
                   id="message"
                   rows={4}
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-gray-700/50 bg-gray-800/50 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300/50 dark:border-gray-700/50 bg-gray-100/50 dark:bg-gray-800/50 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                   placeholder="Votre message..."
                 ></textarea>
               </div>
@@ -139,10 +139,10 @@ const Contact = () => {
             </form>
 
             {status === "success" && (
-              <p className="text-blue-400 mt-4 text-center">Message envoyé avec succès !</p>
+              <p className="text-blue-600 dark:text-blue-400 mt-4 text-center">Message envoyé avec succès !</p>
             )}
             {status === "error" && (
-              <p className="text-red-400 mt-4 text-center">Une erreur est survenue. Réessayez.</p>
+              <p className="text-red-600 dark:text-red-400 mt-4 text-center">Une erreur est survenue. Réessayez.</p>
             )}
           </motion.div>
 
@@ -154,33 +154,33 @@ const Contact = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <div className="bg-gray-800/80 rounded-3xl p-8 shadow-xl border border-gray-700/50 backdrop-blur-md">
+            <div className="bg-gray-100/80 dark:bg-gray-800/80 rounded-3xl p-8 shadow-xl border border-gray-300/50 dark:border-gray-700/50 backdrop-blur-md">
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-blue-400" />
-                  <span className="text-gray-300">
+                  <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-600 dark:text-gray-300">
                     toavina.rabenjanaharisoa@gmail.com
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-blue-400" />
-                  <span className="text-gray-300">+261 38 51 920 03</span>
+                  <Phone className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-600 dark:text-gray-300">+261 38 51 920 03</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <MapPin className="w-5 h-5 text-blue-400" />
-                  <span className="text-gray-300">Ankadindramamy</span>
+                  <MapPin className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                  <span className="text-gray-600 dark:text-gray-300">Ankadindramamy</span>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gray-800/80 rounded-3xl p-8 shadow-xl border border-gray-700/50 backdrop-blur-md">
+            <div className="bg-gray-100/80 dark:bg-gray-800/80 rounded-3xl p-8 shadow-xl border border-gray-300/50 dark:border-gray-700/50 backdrop-blur-md">
               <div className="flex space-x-4">
                 <motion.a
                   href="https://github.com/Nahary007"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="p-3 bg-gray-800 rounded-xl text-gray-300 hover:bg-blue-600 hover:text-white transition-all duration-300"
+                  className="p-3 bg-gray-100 dark:bg-gray-800 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-blue-600 hover:text-white transition-all duration-300"
                 >
                   <Github className="w-5 h-5" />
                 </motion.a>
@@ -189,7 +189,7 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="p-3 bg-gray-800 rounded-xl text-gray-300 hover:bg-blue-600 hover:text-white transition-all duration-300"
+                  className="p-3 bg-gray-100 dark:bg-gray-800 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-blue-600 hover:text-white transition-all duration-300"
                 >
                   <Linkedin className="w-5 h-5" />
                 </motion.a>
