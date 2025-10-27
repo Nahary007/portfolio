@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDownToLine } from "lucide-react";
-import profilePic from "../assets/PXL_20250412_114914440.MP.jpg";
+import profilePic from "../assets/profil.png";
 
 const Introduction = () => {
   return (
