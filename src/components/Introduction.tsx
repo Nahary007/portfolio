@@ -4,7 +4,7 @@ import profilePic from "../assets/PXL_20250412_114914440.MP.jpg";
 
 const Introduction = () => {
   return (
-   <section id="profil" className="relative flex flex-col md:flex-row items-center justify-center px-6 md:px-20 py-10 min-h-0 overflow-hidden text-white transition-colors duration-300 bg-gray-900">
+   <section id="profil" className="relative flex flex-col md:flex-row items-center justify-center px-6 md:px-20 py-10 min-h-0 overflow-hidden text-gray-900 dark:text-white transition-colors duration-300 bg-gray-50 dark:bg-gray-900">
       
       {/* Photo de profil avec halo doux */}
       <motion.div
@@ -16,7 +16,7 @@ const Introduction = () => {
         {/* Halo doux */}
         <div className="absolute -inset-2 bg-blue-500 rounded-3xl blur-xl opacity-20"></div>
 
-        <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-700/50 bg-gray-800 backdrop-blur-md hover:scale-105 transition-transform duration-300">
+        <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-300/50 dark:border-gray-700/50 bg-gray-100 dark:bg-gray-800 backdrop-blur-md hover:scale-105 transition-transform duration-300">
           <img
             src={profilePic}
             alt="Portrait"
@@ -32,7 +32,7 @@ const Introduction = () => {
         transition={{ duration: 1, delay: 0.3 }}
         className="z-10 max-w-2xl text-center md:text-left"
       >
-        <h1 className="text-2xl md:text-3xl font-semibold text-gray-200 tracking-wide">
+        <h1 className="text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-200 tracking-wide">
           RABENJANAHARISOA Toavina (Nahary)
         </h1>
 
@@ -42,7 +42,7 @@ const Introduction = () => {
           </span>
         </h2>
 
-        <p className="mt-4 text-gray-300 leading-relaxed text-base md:text-lg">
+        <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed text-base md:text-lg">
           Passionné par les technologies, je suis fier d’exercer ce métier de développeur qui me pousse à apprendre, à me dépasser, et à résoudre des problèmes concrets avec des solutions élégantes et efficaces ; c’est cette quête constante d’amélioration, ce plaisir de transformer des idées en applications utiles et performantes.
         </p>
 

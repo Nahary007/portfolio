@@ -23,7 +23,7 @@ const competences = [
 
 const Competences = () => {
   return (
-    <section id="competences" className="relative py-24 min-h-screen overflow-hidden text-white transition-colors duration-300 bg-gray-900">
+    <section id="competences" className="relative py-24 min-h-screen overflow-hidden text-gray-900 dark:text-white transition-colors duration-300 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -45,7 +45,7 @@ const Competences = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="group relative rounded-2xl p-4 shadow-md border border-gray-700/20 overflow-hidden hover:shadow-lg hover:-translate-y-2 transition-all duration-300 bg-gray-800"
+              className="group relative rounded-2xl p-4 shadow-md border border-gray-300/20 dark:border-gray-700/20 overflow-hidden hover:shadow-lg hover:-translate-y-2 transition-all duration-300 bg-gray-100 dark:bg-gray-800"
               whileHover={{ scale: 1.05 }}
             >
               <div className="flex justify-center mb-3">
@@ -55,8 +55,8 @@ const Competences = () => {
                   className="w-12 h-12 object-contain"
                 />
               </div>
-              <h3 className="text-center font-semibold text-sm mb-2 text-white">{comp.nom}</h3>
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-700/30">
+              <h3 className="text-center font-semibold text-sm mb-2 text-gray-900 dark:text-white">{comp.nom}</h3>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-300/30 dark:bg-gray-700/30">
                 <div
                   className="h-full bg-blue-500 transition-all duration-300"
                   style={{ width: `${comp.pourcentage}%` }}
