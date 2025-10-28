@@ -1,32 +1,45 @@
 import { motion } from "framer-motion";
-import { Code2,  ExternalLink } from "lucide-react";
+import { Code2, ExternalLink } from "lucide-react";
 
-const projets = [
-  {
-    titre: "SideUp",
-    description: [
-      "Création d'une plateforme de réservation de services de bien-être (SPA, massage, développement personnel) et réalisation autonome du projet complet, avec une interface utilisateur moderne et responsive.",
-      "Mise en place d’un système d’envoi d’emails avec Laravel, gestion des statuts des réservations depuis l’espace administrateur, et ajout de notifications dans l’interface React.",
-      "Utilisation de React pour le frontend, Tailwind CSS pour le style, Laravel pour le backend, et PostgreSQL pour la base de données.",
-      "Apprentissage de l’interconnexion entre un framework JavaScript et un framework PHP, ainsi que la gestion des relations entre les entités.",
-    ],
-    lien: "https://github.com/Nahary007/sideUp-l",
-    couleur: "from-blue-500 to-blue-700",
-  },
-  {
-    titre: "MiamPlanner",
-    description: [
-      "Mise en place d'une plateforme pour mieux organiser les repas afin de diminuer le gaspillage de nourriture.",
-      "Création d'un projet qui offre aux utilisateurs la possibilité de planifier le repas pour chaque semaine, pour une gestion des stocks, des recettes.",
-      " Utilisation de React pour le frontend, Tailwind CSS pour le style, Symfony pour le backend, et PostgreSQL pour la base de données.",
-      "Gestion des entités (utilisateurs, recettes, ingrédients) et interconnexion entre React et Symfony.",
-    ],
-    lien: "https://github.com/Nahary007/MiamPlanner",
-    couleur: "from-blue-500 to-blue-700",
-  },
-];
+const Realisations = ({ lang }: { lang: string }) => {
+  const sectionTitle = lang === 'fr' ? 'Mes Réalisations' : 'My Projects';
+  const viewProjectText = lang === 'fr' ? 'Voir le projet' : 'View project';
 
-const Realisations = () => {
+  const projets = [
+    {
+      titre: "SideUp",
+      description: lang === 'fr' ? [
+        "Création d'une plateforme de réservation de services de bien-être (SPA, massage, développement personnel) et réalisation autonome du projet complet, avec une interface utilisateur moderne et responsive.",
+        "Mise en place d’un système d’envoi d’emails avec Laravel, gestion des statuts des réservations depuis l’espace administrateur, et ajout de notifications dans l’interface React.",
+        "Utilisation de React pour le frontend, Tailwind CSS pour le style, Laravel pour le backend, et PostgreSQL pour la base de données.",
+        "Apprentissage de l’interconnexion entre un framework JavaScript et un framework PHP, ainsi que la gestion des relations entre les entités.",
+      ] : [
+        "Creation of a well-being services booking platform (SPA, massage, personal development) and autonomous realization of the complete project, with a modern and responsive user interface.",
+        "Implementation of an email sending system with Laravel, management of reservation statuses from the administrator space, and addition of notifications in the React interface.",
+        "Use of React for the frontend, Tailwind CSS for styling, Laravel for the backend, and PostgreSQL for the database.",
+        "Learning the interconnection between a JavaScript framework and a PHP framework, as well as the management of relationships between entities.",
+      ],
+      lien: "https://github.com/Nahary007/sideUp-l",
+      couleur: "from-blue-500 to-blue-700",
+    },
+    {
+      titre: "MiamPlanner",
+      description: lang === 'fr' ? [
+        "Mise en place d'une plateforme pour mieux organiser les repas afin de diminuer le gaspillage de nourriture.",
+        "Création d'un projet qui offre aux utilisateurs la possibilité de planifier le repas pour chaque semaine, pour une gestion des stocks, des recettes.",
+        " Utilisation de React pour le frontend, Tailwind CSS pour le style, Symfony pour le backend, et PostgreSQL pour la base de données.",
+        "Gestion des entités (utilisateurs, recettes, ingrédients) et interconnexion entre React et Symfony.",
+      ] : [
+        "Implementation of a platform to better organize meals in order to reduce food waste.",
+        "Creation of a project that allows users to plan meals for each week, for stock management, recipes.",
+        "Use of React for the frontend, Tailwind CSS for styling, Symfony for the backend, and PostgreSQL for the database.",
+        "Management of entities (users, recipes, ingredients) and interconnection between React and Symfony.",
+      ],
+      lien: "https://github.com/Nahary007/MiamPlanner",
+      couleur: "from-blue-500 to-blue-700",
+    },
+  ];
+
   return (
     <section id="realisations" className="relative py-24 min-h-screen-75 overflow-hidden text-gray-900 dark:text-white transition-colors duration-300 bg-gradient-to-br from-gray-50/50 via-transparent to-gray-100/50 dark:from-gray-900/50 dark:via-transparent dark:to-gray-950/50">
       {/* Arrière-plan subtil avec formes géométriques */}
@@ -44,7 +57,7 @@ const Realisations = () => {
           viewport={{ once: true }}
           className="text-5xl md:text-6xl font-black text-center mb-4 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent drop-shadow-2xl"
         >
-          Mes Réalisations
+          {sectionTitle}
         </motion.h2>
 
         {/* Conteneur des projets avec grille responsive */}
@@ -58,9 +71,6 @@ const Realisations = () => {
               viewport={{ once: true }}
               className="group relative bg-gradient-to-br from-gray-100/80 to-gray-200/80 dark:from-gray-800/80 dark:to-gray-900/80 rounded-3xl shadow-xl p-8 border border-gray-300/50 dark:border-gray-700/50 backdrop-blur-md overflow-hidden hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500"
             >
-
-
-
 
               {/* Rôle */}
               <div className="flex items-center space-x-3 text-gray-700 dark:text-gray-300 mb-6 relative z-10">
@@ -95,7 +105,7 @@ const Realisations = () => {
                   whileTap={{ scale: 0.95 }}
                   className="mt-6 inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-300 relative z-10"
                 >
-                  Voir le projet <ExternalLink className="w-4 h-4" />
+                  {viewProjectText} <ExternalLink className="w-4 h-4" />
                 </motion.a>
               )}
 
