@@ -1,47 +1,55 @@
 import { motion } from "framer-motion";
 import { BookOpen, Building2, Landmark } from "lucide-react";
 
-const parcoursItems = [
-  {
-    type: "experience",
-    titre: "Hackathon Interne",
-    entreprise: "MadaMiray",
-    dates: "07–09 juillet 2025",
-    description: `
-    Participation à un hackathon interne à l’ESTI sur le projet MadaMiray, une plateforme web pour le tourisme à Madagascar.`,
-  },
-  {
-    type: "experience",
-    titre: "Webcup 2025",
-    entreprise: "TheEndPage",
-    dates: "17–18 mai 2025",
-    description: `
-    Participation à la Webcup 2025 sur le projet EndPage, une plateforme de création de pages personnalisées avec gestion complète des profils utilisateurs (CRUD, authentification).`,
-  },
-  {
-    type: "diplome",
-    titre: "Licence Informatique – 2ᵉ année",
-    institution: "ESTI – Antanimena",
-    annee: "2024 – Aujourd’hui",
-    description: "Formation en développement web, bases de données et conception d’applications logicielles.",
-  },
-  {
-    type: "diplome",
-    titre: "Licence Informatique – 1ʳᵉ année",
-    institution: "ESTI – Antanimena",
-    annee: "2023 – 2024",
-    description: "Acquisition des bases solides en programmation et technologies web.",
-  },
-  {
-    type: "diplome",
-    titre: "Baccalauréat Série D",
-    institution: "LP Éthique – Ankadindramamy",
-    annee: "2022 – 2023",
-    description: "Études secondaires axées sur les sciences exactes et la logique mathématique.",
-  },
-];
+type CvProps = {
+  lang: string;
+};
 
-const Cv = () => {
+const Cv = ({ lang }: CvProps) => {
+  const sectionTitle = lang === 'fr' ? 'Mon Parcours Professionnel' : 'My Professional Journey';
+
+  const parcoursItems = [
+    {
+      type: "experience",
+      titre: lang === 'fr' ? "Hackathon Interne" : "Internal Hackathon",
+      entreprise: "MadaMiray",
+      dates: lang === 'fr' ? "07–09 juillet 2025" : "07–09 July 2025",
+      description: lang === 'fr' ? 
+        `Participation à un hackathon interne à l’ESTI sur le projet MadaMiray, une plateforme web pour le tourisme à Madagascar.` :
+        `Participation in an internal hackathon at ESTI on the MadaMiray project, a web platform for tourism in Madagascar.`,
+    },
+    {
+      type: "experience",
+      titre: lang === 'fr' ? "Webcup 2025" : "Webcup 2025",
+      entreprise: "TheEndPage",
+      dates: lang === 'fr' ? "17–18 mai 2025" : "17–18 May 2025",
+      description: lang === 'fr' ? 
+        `Participation à la Webcup 2025 sur le projet EndPage, une plateforme de création de pages personnalisées avec gestion complète des profils utilisateurs (CRUD, authentification).` :
+        `Participation in Webcup 2025 on the EndPage project, a platform for creating personalized pages with complete user profile management (CRUD, authentication).`,
+    },
+    {
+      type: "diplome",
+      titre: lang === 'fr' ? "Licence Informatique – 2ᵉ année" : "Bachelor's in Computer Science – 2nd year",
+      institution: "ESTI – Antanimena",
+      annee: "2024 – Present",
+      description: lang === 'fr' ? "Formation en développement web, bases de données et conception d’applications logicielles." : "Training in web development, databases and software application design.",
+    },
+    {
+      type: "diplome",
+      titre: lang === 'fr' ? "Licence Informatique – 1ʳᵉ année" : "Bachelor's in Computer Science – 1st year",
+      institution: "ESTI – Antanimena",
+      annee: "2023 – 2024",
+      description: lang === 'fr' ? "Acquisition des bases solides en programmation et technologies web." : "Acquisition of solid foundations in programming and web technologies.",
+    },
+    {
+      type: "diplome",
+      titre: lang === 'fr' ? "Baccalauréat Série D" : "Baccalaureate Series D",
+      institution: "LP Éthique – Ankadindramamy",
+      annee: "2022 – 2023",
+      description: lang === 'fr' ? "Études secondaires axées sur les sciences exactes et la logique mathématique." : "Secondary studies focused on exact sciences and mathematical logic.",
+    },
+  ];
+
   return (
     <section
       id="cv"
@@ -60,7 +68,7 @@ const Cv = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-            Mon Parcours Professionnel
+            {sectionTitle}
           </h2>
         </motion.div>
 

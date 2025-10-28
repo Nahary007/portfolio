@@ -1,27 +1,31 @@
 import { motion } from "framer-motion";
 
-const competences = [
-  { nom: "HTML", pourcentage: 90, icone: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-  { nom: "CSS", pourcentage: 75, icone: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-  { nom: "Bootstrap", pourcentage: 65, icone: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
-  { nom: "Tailwindcss", pourcentage: 60, icone: "https://getlogovector.com/wp-content/uploads/2021/01/tailwind-css-logo-vector.png" },
-  { nom: "C", pourcentage: 75, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" },
-  { nom: "C++", pourcentage: 75, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" },
-  { nom: "JavaScript", pourcentage: 75, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" },
-  { nom: "TypeScript", pourcentage: 85, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" },
-  { nom: "PHP", pourcentage: 90, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" },
-  { nom: "Java", pourcentage: 70, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" },
-  { nom: "Python", pourcentage: 70, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
-  { nom: "Laravel", pourcentage: 87, icone: "https://i.pinimg.com/736x/ab/8b/5e/ab8b5ea6637ebd8e5755c838d952b8c1.jpg" },
-  { nom: "Symfony", pourcentage: 78, icone: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC_-q51pPQiLuZf84O0Psnw1dGr1PCd6vMzA&s" },
-  { nom: "Expess.js", pourcentage: 85, icone: "https://images.tute.io/media/topics/icons/express-js.png" },
-  { nom: "Spring Boot", pourcentage: 60, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg" },
-  { nom: "Flutter", pourcentage: 40, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg" },
-  { nom: "Dart", pourcentage: 40, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg" },
+type CompetencesProps = { lang: string };
 
-];
+const Competences = ({ lang }: CompetencesProps) => {
+  const sectionTitle = lang === 'fr' ? 'Mes Compétences' : 'My Skills';
 
-const Competences = () => {
+  const competences = [
+    { nom: "HTML", pourcentage: 90, icone: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+    { nom: "CSS", pourcentage: 75, icone: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+    { nom: "Bootstrap", pourcentage: 65, icone: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+    { nom: "Tailwindcss", pourcentage: 60, icone: "https://getlogovector.com/wp-content/uploads/2021/01/tailwind-css-logo-vector.png" },
+    { nom: "C", pourcentage: 75, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" },
+    { nom: "C++", pourcentage: 75, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" },
+    { nom: "JavaScript", pourcentage: 75, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" },
+    { nom: "TypeScript", pourcentage: 85, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" },
+    { nom: "PHP", pourcentage: 90, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" },
+    { nom: "Java", pourcentage: 70, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" },
+    { nom: "Python", pourcentage: 70, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
+    { nom: "Laravel", pourcentage: 87, icone: "https://i.pinimg.com/736x/ab/8b/5e/ab8b5ea6637ebd8e5755c838d952b8c1.jpg" },
+    { nom: "Symfony", pourcentage: 78, icone: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC_-q51pPQiLuZf84O0Psnw1dGr1PCd6vMzA&s" },
+    { nom: "Expess.js", pourcentage: 85, icone: "https://images.tute.io/media/topics/icons/express-js.png" },
+    { nom: "Spring Boot", pourcentage: 60, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg" },
+    { nom: "Flutter", pourcentage: 40, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg" },
+    { nom: "Dart", pourcentage: 40, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg" },
+
+  ];
+
   return (
     <section id="competences" className="relative py-24 min-h-screen overflow-hidden text-gray-900 dark:text-white transition-colors duration-300 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -33,7 +37,7 @@ const Competences = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-black mb-4 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-            Mes Compétences
+            {sectionTitle}
           </h2>
         </motion.div>
 

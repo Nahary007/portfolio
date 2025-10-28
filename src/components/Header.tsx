@@ -1,38 +1,37 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 
-export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isDark, setIsDark] = useState(true);
+interface HeaderProps {
+  isDark: boolean;
+  setIsDark: (isDark: boolean) => void;
+  lang: string;
+  setLang: (lang: string) => void;
+}
 
-  useEffect(() => {
-    const saved = localStorage.getItem('theme');
-    if (saved === 'light') {
-      setIsDark(false);
-      document.documentElement.classList.remove('dark');
-    } else {
-      setIsDark(true);
-      document.documentElement.classList.add('dark');
-    }
-  }, []);
+export default function Header({ isDark, setIsDark, lang, setLang }: HeaderProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleTheme = () => {
     setIsDark(!isDark);
-    if (isDark) {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    } else {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    }
   };
 
-  const navLinks = [
+  const toggleLang = () => {
+    setLang(lang === 'fr' ? 'en' : 'fr');
+  };
+
+  const navLinks = lang === 'fr' ? [
     { name: 'Profil', href: '#profil' },
     { name: 'Réalisations', href: '#realisations' },
     { name: 'CV', href: '#cv' },
     { name: 'Compétences', href: '#competences' },
+  ] : [
+    { name: 'Profile', href: '#profil' },
+    { name: 'Projects', href: '#realisations' },
+    { name: 'CV', href: '#cv' },
+    { name: 'Skills', href: '#competences' },
   ];
+
+  const contactButtonText = lang === 'fr' ? 'Me contacter' : 'Contact Me';
 
   return (
     <>
@@ -67,11 +66,18 @@ export default function Header() {
                 )}
               </button>
 
+              <button
+                onClick={toggleLang}
+                className="px-3 py-1 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 rounded-lg transition-colors duration-300 bg-gray-100 dark:bg-gray-800"
+              >
+                {lang.toUpperCase()}
+              </button>
+
               <a
                 href="#contact"
                 className="relative px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full font-semibold overflow-hidden group transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25 active:scale-95"
               >
-                <span className="relative z-10">Me contacter</span>
+                <span className="relative z-10">{contactButtonText}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
             </nav>
@@ -87,6 +93,12 @@ export default function Header() {
                 ) : (
                   <Moon className="w-5 h-5" />
                 )}
+              </button>
+              <button
+                onClick={toggleLang}
+                className="px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 rounded transition-colors duration-300 bg-gray-100 dark:bg-gray-800"
+              >
+                {lang.toUpperCase()}
               </button>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -117,12 +129,18 @@ export default function Header() {
         }`}
       >
         <div className="flex flex-col h-full pt-20 px-6">
-          <div className="flex justify-end mb-4">
+          <div className="flex justify-end mb-4 space-x-2">
             <button
               onClick={toggleTheme}
               className="p-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 rounded-lg transition-colors duration-300"
             >
               {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" /> }
+            </button>
+            <button
+              onClick={toggleLang}
+              className="px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 rounded transition-colors duration-300 bg-gray-100 dark:bg-gray-800"
+            >
+              {lang.toUpperCase()}
             </button>
           </div>
           <nav className="flex flex-col space-y-6">
@@ -142,7 +160,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className="relative mt-4 px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full font-semibold overflow-hidden group transition-all duration-300 hover:scale-105 hover:shadow-xl"
             >
-              <span className="relative z-10">Me contacter</span>
+              <span className="relative z-10">{contactButtonText}</span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
           </nav>

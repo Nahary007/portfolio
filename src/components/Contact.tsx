@@ -3,9 +3,43 @@ import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
 
-const Contact = () => {
+interface ContactProps {
+  lang: string;
+}
+
+const Contact = ({ lang }: ContactProps) => {
   const form = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<string | null>(null);
+
+  const sectionTitle = lang === 'fr' ? 'Me Contacter' : 'Contact Me';
+  const paragraph = lang === 'fr' ? 
+    "Envie de donner vie à votre projet ? Contactez-moi dès maintenant ou rejoignez-moi sur les réseaux sociaux." :
+    "Want to bring your project to life? Contact me now or join me on social networks.";
+  const formTitle = lang === 'fr' ? 'Envoyez un Message' : 'Send a Message';
+
+  const labels = lang === 'fr' ? {
+    name: 'Nom',
+    email: 'Email',
+    subject: 'Objet',
+    message: 'Message',
+    namePh: 'Votre nom',
+    emailPh: 'votre@email.com',
+    subjectPh: 'Objet du message',
+    messagePh: 'Votre message...',
+  } : {
+    name: 'Name',
+    email: 'Email',
+    subject: 'Subject',
+    message: 'Message',
+    namePh: 'Your name',
+    emailPh: 'your@email.com',
+    subjectPh: 'Message subject',
+    messagePh: 'Your message...',
+  };
+
+  const sendButton = lang === 'fr' ? 'Envoyer' : 'Send';
+  const successMsg = lang === 'fr' ? 'Message envoyé avec succès !' : 'Message sent successfully!';
+  const errorMsg = lang === 'fr' ? 'Une erreur est survenue. Réessayez.' : 'An error occurred. Please try again.';
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -51,11 +85,11 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-5xl md:text-6xl font-black text-center mb-4 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent drop-shadow-2xl"
         >
-          Me Contacter
+          {sectionTitle}
         </motion.h2>
 
         <p className="text-center text-gray-600 dark:text-gray-300 mb-16 text-lg max-w-3xl mx-auto">
-          Envie de donner vie à votre projet ? Contactez-moi dès maintenant ou rejoignez-moi sur les réseaux sociaux.
+          {paragraph}
         </p>
 
 
@@ -68,12 +102,12 @@ const Contact = () => {
             viewport={{ once: true }}
             className="bg-gray-100/80 dark:bg-gray-800/80 rounded-3xl p-8 shadow-xl border border-gray-300/50 dark:border-gray-700/50 backdrop-blur-md"
           >
-            <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Envoyez un Message</h3>
+            <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">{formTitle}</h3>
 
             <form ref={form} onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
-                  Nom
+                  {labels.name}
                 </label>
                 <input
                   type="text"
@@ -81,13 +115,13 @@ const Contact = () => {
                   id="name"
                   required
                   className="w-full px-4 py-3 rounded-xl border border-gray-300/50 dark:border-gray-700/50 bg-gray-100/50 dark:bg-gray-800/50 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
-                  placeholder="Votre nom"
+                  placeholder={labels.namePh}
                 />
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
-                  Email
+                  {labels.email}
                 </label>
                 <input
                   type="email"
@@ -95,13 +129,13 @@ const Contact = () => {
                   id="email"
                   required
                   className="w-full px-4 py-3 rounded-xl border border-gray-300/50 dark:border-gray-700/50 bg-gray-100/50 dark:bg-gray-800/50 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
-                  placeholder="votre@email.com"
+                  placeholder={labels.emailPh}
                 />
               </div>
 
               <div>
                 <label htmlFor="objet" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
-                  Objet
+                  {labels.subject}
                 </label>
                 <input
                   type="text"
@@ -109,13 +143,13 @@ const Contact = () => {
                   id="objet"
                   required
                   className="w-full px-4 py-3 rounded-xl border border-gray-300/50 dark:border-gray-700/50 bg-gray-100/50 dark:bg-gray-800/50 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
-                  placeholder="Objet du message"
+                  placeholder={labels.subjectPh}
                 />
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
-                  Message
+                  {labels.message}
                 </label>
                 <textarea
                   name="message"
@@ -123,7 +157,7 @@ const Contact = () => {
                   rows={4}
                   required
                   className="w-full px-4 py-3 rounded-xl border border-gray-300/50 dark:border-gray-700/50 bg-gray-100/50 dark:bg-gray-800/50 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
-                  placeholder="Votre message..."
+                  placeholder={labels.messagePh}
                 ></textarea>
               </div>
 
@@ -135,15 +169,15 @@ const Contact = () => {
                 type="submit"
                 className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white py-3 px-6 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                Envoyer
+                {sendButton}
               </motion.button>
             </form>
 
             {status === "success" && (
-              <p className="text-blue-600 dark:text-blue-400 mt-4 text-center">Message envoyé avec succès !</p>
+              <p className="text-blue-600 dark:text-blue-400 mt-4 text-center">{successMsg}</p>
             )}
             {status === "error" && (
-              <p className="text-red-600 dark:text-red-400 mt-4 text-center">Une erreur est survenue. Réessayez.</p>
+              <p className="text-red-600 dark:text-red-400 mt-4 text-center">{errorMsg}</p>
             )}
           </motion.div>
 

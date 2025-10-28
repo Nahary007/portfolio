@@ -2,7 +2,17 @@ import { motion } from "framer-motion";
 import { ArrowDownToLine } from "lucide-react";
 import profilePic from "../assets/profil.png";
 
-const Introduction = () => {
+interface IntroductionProps {
+  lang: string;
+}
+
+const Introduction = ({ lang }: IntroductionProps) => {
+  const title = lang === 'fr' ? 'Développeur Web & Mobile' : 'Web & Mobile Developer';
+  const paragraph = lang === 'fr' ? 
+    "Passionné par les technologies, je suis fier d’exercer ce métier de développeur qui me pousse à apprendre, à me dépasser, et à résoudre des problèmes concrets avec des solutions élégantes et efficaces. C’est cette quête constante d’amélioration, ce plaisir de transformer des idées en applications utiles et performantes." :
+    "Passionate about technologies, I am proud to practice this developer profession that pushes me to learn, to exceed myself, and to solve concrete problems with elegant and efficient solutions. It is this constant quest for improvement, this pleasure of transforming ideas into useful and performant applications.";
+  const downloadText = lang === 'fr' ? 'Télécharger CV' : 'Download CV';
+
   return (
    <section id="profil" className="relative flex flex-col md:flex-row items-center justify-center px-6 md:px-20 py-10 min-h-0 overflow-hidden text-gray-900 dark:text-white transition-colors duration-300 bg-gray-50 dark:bg-gray-900">
       
@@ -38,12 +48,12 @@ const Introduction = () => {
 
         <h2 className="mt-2 text-4xl md:text-6xl font-extrabold leading-tight">
           <span className="text-blue-400 drop-shadow-sm">
-            Développeur Web & Mobile
+            {title}
           </span>
         </h2>
 
         <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed text-base md:text-lg">
-          Passionné par les technologies, je suis fier d’exercer ce métier de développeur qui me pousse à apprendre, à me dépasser, et à résoudre des problèmes concrets avec des solutions élégantes et efficaces. C’est cette quête constante d’amélioration, ce plaisir de transformer des idées en applications utiles et performantes.
+          {paragraph}
         </p>
 
 
@@ -55,7 +65,7 @@ const Introduction = () => {
           className="mt-8 inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium shadow-lg transition-all duration-300"
         >
           <ArrowDownToLine className="w-5 h-5" />
-          Télécharger CV
+          {downloadText}
         </motion.a>
       </motion.div>
     </section>
