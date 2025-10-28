@@ -55,8 +55,9 @@ const Contact = () => {
         </motion.h2>
 
         <p className="text-center text-gray-600 dark:text-gray-300 mb-16 text-lg max-w-3xl mx-auto">
-          Prêt à discuter de votre projet ? Envoyez-moi un message ou connectez-vous sur les réseaux sociaux.
+          Envie de donner vie à votre projet ? Contactez-moi dès maintenant ou rejoignez-moi sur les réseaux sociaux.
         </p>
+
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Formulaire EmailJS */}

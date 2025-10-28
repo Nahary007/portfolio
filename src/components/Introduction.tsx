@@ -43,7 +43,7 @@ const Introduction = () => {
         </h2>
 
         <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed text-base md:text-lg">
-          Passionné par les technologies, je suis fier d’exercer ce métier de développeur qui me pousse à apprendre, à me dépasser, et à résoudre des problèmes concrets avec des solutions élégantes et efficaces ; c’est cette quête constante d’amélioration, ce plaisir de transformer des idées en applications utiles et performantes.
+          Passionné par les technologies, je suis fier d’exercer ce métier de développeur qui me pousse à apprendre, à me dépasser, et à résoudre des problèmes concrets avec des solutions élégantes et efficaces. C’est cette quête constante d’amélioration, ce plaisir de transformer des idées en applications utiles et performantes.
         </p>
 
 
