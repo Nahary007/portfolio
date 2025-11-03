@@ -6,7 +6,7 @@ type CvProps = {
 };
 
 const Cv = ({ lang }: CvProps) => {
-  const sectionTitle = lang === 'fr' ? 'Mon Parcours Professionnel' : 'My Professional Journey';
+  const sectionTitle = lang === 'fr' ? 'Mon Parcours Professionnel' : 'My career path';
 
   const parcoursItems = [
     {
@@ -53,7 +53,7 @@ const Cv = ({ lang }: CvProps) => {
   return (
     <section
       id="cv"
-      className="relative py-24 min-h-screen bg-gradient-to-br from-gray-50/70 via-transparent to-blue-100/30 dark:from-gray-900/70 dark:via-transparent dark:to-blue-900/30 overflow-hidden text-gray-900 dark:text-white transition-colors duration-300"
+      className="relative py-6 min-h-screen bg-gradient-to-br from-gray-50/70 via-transparent to-blue-100/30 dark:from-gray-900/70 dark:via-transparent dark:to-blue-900/30 overflow-hidden text-gray-900 dark:text-white transition-colors duration-300"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-96 bg-gradient-to-r from-blue-100/20 to-blue-300/20 dark:from-blue-500/20 dark:to-blue-700/20 rounded-full blur-3xl opacity-50"></div>

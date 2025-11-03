@@ -28,7 +28,7 @@ export default function Header({ isDark, setIsDark, lang, setLang }: HeaderProps
         ]
       : [
           { name: 'Profile', href: '#profil' },
-          { name: 'Projects', href: '#realisations' },
+          { name: 'Achievements', href: '#realisations' },
           { name: 'CV', href: '#cv' },
           { name: 'Skills', href: '#competences' },
         ];
