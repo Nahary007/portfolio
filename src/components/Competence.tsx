@@ -27,7 +27,7 @@ const Competences = ({ lang }: CompetencesProps) => {
   ];
 
   return (
-    <section id="competences" className="relative py-24 min-h-screen overflow-hidden text-gray-900 dark:text-white transition-colors duration-300 bg-gray-50 dark:bg-gray-900">
+    <section id="competences" className="relative py-6 min-h-screen overflow-hidden text-gray-900 dark:text-white transition-colors duration-300 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: -50 }}

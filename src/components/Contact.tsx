@@ -68,7 +68,7 @@ const Contact = ({ lang }: ContactProps) => {
   return (
     <section
       id="contact"
-      className="relative py-24 min-h-screen bg-gradient-to-br from-gray-50/50 via-transparent to-gray-100/50 dark:from-gray-900/50 dark:via-transparent dark:to-gray-950/50 overflow-hidden text-gray-900 dark:text-white transition-colors duration-300"
+      className="relative py-6 min-h-screen bg-gradient-to-br from-gray-50/50 via-transparent to-gray-100/50 dark:from-gray-900/50 dark:via-transparent dark:to-gray-950/50 overflow-hidden text-gray-900 dark:text-white transition-colors duration-300"
     >
       {/* Arrière-plan subtil */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

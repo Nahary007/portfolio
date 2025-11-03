@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Code2, ExternalLink } from "lucide-react";
 
 const Realisations = ({ lang }: { lang: string }) => {
-  const sectionTitle = lang === 'fr' ? 'Mes Réalisations' : 'My Projects';
+  const sectionTitle = lang === 'fr' ? 'Mes Réalisations' : 'My Achievements';
   const viewProjectText = lang === 'fr' ? 'Voir le projet' : 'View project';
 
   const projets = [
@@ -14,10 +14,10 @@ const Realisations = ({ lang }: { lang: string }) => {
         "Utilisation de React pour le frontend, Tailwind CSS pour le style, Laravel pour le backend, et PostgreSQL pour la base de données.",
         "Apprentissage de l’interconnexion entre un framework JavaScript et un framework PHP, ainsi que la gestion des relations entre les entités.",
       ] : [
-        "Creation of a well-being services booking platform (SPA, massage, personal development) and autonomous realization of the complete project, with a modern and responsive user interface.",
+        "Creation of a booking platform for wellness services (spa, massage, personal development) and independent implementation of the entire project, with a modern and responsive user interface.",
         "Implementation of an email sending system with Laravel, management of reservation statuses from the administrator space, and addition of notifications in the React interface.",
         "Use of React for the frontend, Tailwind CSS for styling, Laravel for the backend, and PostgreSQL for the database.",
-        "Learning the interconnection between a JavaScript framework and a PHP framework, as well as the management of relationships between entities.",
+        "Learning how to interconnect a JavaScript framework and a PHP framework, as well as managing relationships between entities.",
       ],
       lien: "https://github.com/Nahary007/sideUp-l",
       couleur: "from-blue-500 to-blue-700",
@@ -41,7 +41,7 @@ const Realisations = ({ lang }: { lang: string }) => {
   ];
 
   return (
-    <section id="realisations" className="relative py-24 min-h-screen-75 overflow-hidden text-gray-900 dark:text-white transition-colors duration-300 bg-gradient-to-br from-gray-50/50 via-transparent to-gray-100/50 dark:from-gray-900/50 dark:via-transparent dark:to-gray-950/50">
+    <section id="realisations" className="relative py-6 min-h-screen-75 overflow-hidden text-gray-900 dark:text-white transition-colors duration-300 bg-gradient-to-br from-gray-50/50 via-transparent to-gray-100/50 dark:from-gray-900/50 dark:via-transparent dark:to-gray-950/50">
       {/* Arrière-plan subtil avec formes géométriques */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl"></div>
