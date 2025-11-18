@@ -33,7 +33,7 @@ export default function Header({ isDark, setIsDark, lang, setLang }: HeaderProps
           { name: 'Skills', href: '#competences' },
         ];
 
-  const contactButtonText = lang === 'fr' ? 'Me contacter' : 'Contact Me';
+  const contactButtonText = lang === 'fr' ? 'Me contacte' : 'Contact Me';
 
   return (
     <>
