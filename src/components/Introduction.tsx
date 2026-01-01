@@ -9,8 +9,8 @@ interface IntroductionProps {
 const Introduction = ({ lang }: IntroductionProps) => {
   const title = lang === 'fr' ? 'Développeur Web & Mobile' : 'Web & Mobile Developer';
   const paragraph = lang === 'fr' ? 
-    "Passionné par les technologies, je suis fier d’exercer ce métier de développeur qui me pousse à apprendre, à me dépasser, et à résoudre des problèmes concrets avec des solutions élégantes et efficaces. C’est cette quête constante d’amélioration, ce plaisir de transformer des idées en applications utiles et performantes." :
-    "Passionate about technology, I am proud to work as a developer, a job that pushes me to learn, to excel, and to solve real-world problems with elegant and effective solutions. It is this constant quest for improvement, this pleasure of transforming ideas into useful and powerful applications.";
+    "Passionné par les technologies, je suis fier d’exercer ce métier de développeur qui me pousse à apprendre, à me dépasser, et à résoudre des problèmes. C’est cette quête constante d’amélioration, ce plaisir de transformer des idées en applications utiles et performantes." :
+    "Passionate about technology, I am proud to work as a developer, a job that pushes me to learn, excel, and solve problems. It is this constant quest for improvement, this pleasure in transforming ideas into useful and effective applications.";
   const downloadText = lang === 'fr' ? 'Télécharger CV' : 'Download CV';
 
   return (

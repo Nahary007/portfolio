@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Facebook, MessageCircle } from "lucide-react";
 
 interface ContactProps {
   lang: string;
@@ -134,20 +134,6 @@ const Contact = ({ lang }: ContactProps) => {
               </div>
 
               <div>
-                <label htmlFor="objet" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
-                  {labels.subject}
-                </label>
-                <input
-                  type="text"
-                  name="subject"
-                  id="objet"
-                  required
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300/50 dark:border-gray-700/50 bg-gray-100/50 dark:bg-gray-800/50 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
-                  placeholder={labels.subjectPh}
-                />
-              </div>
-
-              <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
                   {labels.message}
                 </label>
@@ -208,7 +194,7 @@ const Contact = ({ lang }: ContactProps) => {
               </div>
             </div>
 
-            <div className="bg-gray-100/80 dark:bg-gray-800/80 rounded-3xl p-8 shadow-xl border border-gray-300/50 dark:border-gray-700/50 backdrop-blur-md">
+            <div className="bg-gray-100/80 dark:bg-gray-800/80 rounded-3xl px-6 py-4 shadow-xl border border-gray-300/50 dark:border-gray-700/50 backdrop-blur-md">
               <div className="flex space-x-4">
                 <motion.a
                   href="https://github.com/Nahary007"
@@ -227,6 +213,28 @@ const Contact = ({ lang }: ContactProps) => {
                   className="p-3 bg-gray-100 dark:bg-gray-800 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-blue-600 hover:text-white transition-all duration-300"
                 >
                   <Linkedin className="w-5 h-5" />
+                </motion.a>
+
+                  {/* Facebook */}
+                <motion.a
+                  href="https://www.facebook.com/nahary.gd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="p-3 bg-gray-100 dark:bg-gray-800 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-blue-700 hover:text-white transition-all duration-300"
+                >
+                  <Facebook className="w-5 h-5" />
+                </motion.a>
+
+                {/* WhatsApp */}
+                <motion.a
+                  href="https://wa.me/261387904652"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="p-3 bg-gray-100 dark:bg-gray-800 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-green-600 hover:text-white transition-all duration-300"
+                >
+                  <MessageCircle className="w-5 h-5" />
                 </motion.a>
               </div>
             </div>
