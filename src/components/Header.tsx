@@ -154,6 +154,32 @@ export default function Header({ isDark, setIsDark, lang, setLang }: HeaderProps
           </div>
         </div>
       </header>
+      
+      {mobileMenuOpen && (
+        <div className="md:hidden fixed top-16 left-0 w-full h-[calc(100vh-4rem)] bg-white dark:bg-gray-900 z-40 border-b border-gray-200 dark:border-gray-800">
+          <nav className="flex flex-col px-6 py-4 space-y-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-gray-700 dark:text-gray-200 font-medium py-2 border-b border-gray-200 dark:border-gray-800"
+              >
+                {link.name}
+              </a>
+            ))}
+
+            <a
+              href="#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="mt-4 text-center bg-gradient-to-r from-blue-600 to-blue-800 text-white py-3 rounded-xl font-semibold"
+            >
+              {contactButtonText}
+            </a>
+          </nav>
+        </div>
+      )}
+
     </>
   );
 }

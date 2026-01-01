@@ -28,6 +28,16 @@ const Cv = ({ lang }: CvProps) => {
         `Participation in Webcup 2025 on the EndPage project, a platform for creating personalized pages with complete user profile management (CRUD, authentication).`,
     },
     {
+      type: "experience",
+      titre: lang === 'fr' ? "Stagiaire développeur Symfony" : "Symfony Developer Intern",
+      entreprise: "MyAgency",
+      dates: lang === 'fr' ? "Mars – Mai" : "March – May",
+      description: lang === 'fr'
+        ? `Conception en binôme d’une plateforme web de gestion des successions visant à faciliter la collaboration entre héritiers et notaires, notamment via l’automatisation des démarches administratives.`
+        : `Design in pairs of a web platform for estate management aimed at facilitating collaboration between heirs and notaries, particularly through the automation of administrative procedures.`,
+    },
+
+    {
       type: "diplome",
       titre: lang === 'fr' ? "Licence Informatique – 2ᵉ année" : "Bachelor's in Computer Science – 2nd year",
       institution: "ESTI – Antanimena",
@@ -40,14 +50,7 @@ const Cv = ({ lang }: CvProps) => {
       institution: "ESTI – Antanimena",
       annee: "2023 – 2024",
       description: lang === 'fr' ? "Acquisition des bases solides en programmation et technologies web." : "Acquisition of solid foundations in programming and web technologies.",
-    },
-    {
-      type: "diplome",
-      titre: lang === 'fr' ? "Baccalauréat Série D" : "Baccalaureate Series D",
-      institution: "LP Éthique – Ankadindramamy",
-      annee: "2022 – 2023",
-      description: lang === 'fr' ? "Études secondaires axées sur les sciences exactes et la logique mathématique." : "Secondary studies focused on exact sciences and mathematical logic.",
-    },
+    }
   ];
 
   return (
