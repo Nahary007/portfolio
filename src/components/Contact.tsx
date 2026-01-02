@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 import { Mail, Phone, MapPin, Github, Linkedin, Facebook, MessageCircle } from "lucide-react";
 
 interface ContactProps {
@@ -41,29 +40,38 @@ const Contact = ({ lang }: ContactProps) => {
   const successMsg = lang === 'fr' ? 'Message envoyé avec succès !' : 'Message sent successfully!';
   const errorMsg = lang === 'fr' ? 'Une erreur est survenue. Réessayez.' : 'An error occurred. Please try again.';
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!form.current) return;
 
-    emailjs
-      .sendForm(
-        "service_9sgw6mj", 
-        "template_hovptjf",
-        form.current,
-        "YrVTw-NdB4IDZiUB3"
-      )
-      .then(
-        () => {
-          setStatus("success");
-          form.current?.reset();
+    const formData = new FormData(form.current);
+
+    const data = {
+      name: formData.get("from_name"),
+      email: formData.get("from_email"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const res = await fetch("http://localhost:5000/api/mail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        (error) => {
-          console.error(error);
-          setStatus("error");
-        }
-      );
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) throw new Error("Erreur serveur");
+
+      setStatus("success");
+      form.current.reset();
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    }
   };
+
 
   return (
     <section
