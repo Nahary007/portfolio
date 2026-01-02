@@ -54,7 +54,7 @@ const Contact = ({ lang }: ContactProps) => {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/api/mail", {
+      const res = await fetch("https://nodemailerexpress.onrender.com/api/mail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
