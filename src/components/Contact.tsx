@@ -1,6 +1,7 @@
-import { useRef, useState } from "react";
+import { useRef, useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Github, Linkedin, Facebook, MessageCircle } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 interface ContactProps {
   lang: string;
@@ -40,37 +41,24 @@ const Contact = ({ lang }: ContactProps) => {
   const successMsg = lang === 'fr' ? 'Message envoyé avec succès !' : 'Message sent successfully!';
   const errorMsg = lang === 'fr' ? 'Une erreur est survenue. Réessayez.' : 'An error occurred. Please try again.';
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!form.current) return;
-
-    const formData = new FormData(form.current);
-
-    const data = {
-      name: formData.get("from_name"),
-      email: formData.get("from_email"),
-      message: formData.get("message"),
-    };
-
-    try {
-      const res = await fetch("https://nodemailerexpress.onrender.com/api/mail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (!res.ok) throw new Error("Erreur serveur");
-
-      setStatus("success");
-      form.current.reset();
-    } catch (error) {
-      console.error(error);
+    if (!form.current) {
       setStatus("error");
+      return;
     }
-  };
+
+    emailjs
+      .sendForm("service_1f4tofu", "template_1bbcpbs", form.current, "YrVTw-NdB4IDZiUB3")
+      .then(() => {
+        setStatus("success");
+        if (form.current) form.current.reset();
+      })
+      .catch(() => {
+        setStatus("error");
+      });
+  }
 
 
   return (
