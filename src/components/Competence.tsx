@@ -10,8 +10,6 @@ const Competences = ({ lang }: CompetencesProps) => {
     { nom: "CSS", pourcentage: 75, icone: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
     { nom: "Bootstrap", pourcentage: 65, icone: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
     { nom: "Tailwindcss", pourcentage: 60, icone: "https://getlogovector.com/wp-content/uploads/2021/01/tailwind-css-logo-vector.png" },
-    { nom: "C", pourcentage: 75, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" },
-    { nom: "C++", pourcentage: 75, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" },
     { nom: "JavaScript", pourcentage: 75, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" },
     { nom: "TypeScript", pourcentage: 85, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" },
     { nom: "PHP", pourcentage: 90, icone: "https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" },

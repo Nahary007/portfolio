@@ -10,6 +10,13 @@ const Cv = ({ lang }: CvProps) => {
 
   const parcoursItems = [
     {
+      type: "diplome",
+      titre: lang === 'fr' ? "Licence Informatique – 3 ème année" : "Bachelor's in Computer Science – 3rd year",
+      institution: "ESTI – Antanimena",
+      annee: "2026 – Present",
+      description: lang === 'fr' ? "Formation en développement web, bases de données et conception d’applications logicielles." : "Training in web development, databases and software application design.",
+    }
+    ,{
       type: "experience",
       titre: lang === 'fr' ? "Hackathon Interne" : "Internal Hackathon",
       entreprise: "MadaMiray",
@@ -31,7 +38,7 @@ const Cv = ({ lang }: CvProps) => {
       type: "experience",
       titre: lang === 'fr' ? "Stagiaire développeur Symfony" : "Symfony Developer Intern",
       entreprise: "MyAgency",
-      dates: lang === 'fr' ? "Mars – Mai" : "March – May",
+      dates: lang === 'fr' ? "Mars – Mai 2025" : "March – May 2025",
       description: lang === 'fr'
         ? `Conception en binôme d’une plateforme web de gestion des successions visant à faciliter la collaboration entre héritiers et notaires, notamment via l’automatisation des démarches administratives.`
         : `Design in pairs of a web platform for estate management aimed at facilitating collaboration between heirs and notaries, particularly through the automation of administrative procedures.`,
@@ -41,7 +48,7 @@ const Cv = ({ lang }: CvProps) => {
       type: "diplome",
       titre: lang === 'fr' ? "Licence Informatique – 2ᵉ année" : "Bachelor's in Computer Science – 2nd year",
       institution: "ESTI – Antanimena",
-      annee: "2024 – Present",
+      annee: "2024 – 2025",
       description: lang === 'fr' ? "Formation en développement web, bases de données et conception d’applications logicielles." : "Training in web development, databases and software application design.",
     },
     {
